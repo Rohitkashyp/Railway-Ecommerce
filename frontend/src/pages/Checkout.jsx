@@ -119,7 +119,7 @@ function Checkout() {
 
   try {
     setIsloading(true)
-    const res = await axios.post(`http://localhost:4000/checkout`,OrderData)
+    const res = await axios.post(`${API_EMAIL}/checkout`,OrderData)
     // console.log(res)
     // console.log(res.data)
     localStorage.removeItem("cart")
@@ -248,7 +248,7 @@ function Checkout() {
                               cart.map((item,index)=>(
                             <div key={index} className='flex mt-2 gap-1 border-b-[0.5px] border-gray-300 w-full p-1'>
                                 <div className='w-1/3 h-20 flex justify-center items-center'>
-                                    <img src={`http://localhost:8080${item.image}`} alt="img" className='w-full h-18 object-contain p-2' />
+                                    <img src={`${API_URL}${item.image}`} alt="img" className='w-full h-18 object-contain p-2' />
                                 </div>
                                 <div className='w-1/3 h-15 sm:h-20 flex justify-center items-center'>
                                    <h4>{item.name}</h4>

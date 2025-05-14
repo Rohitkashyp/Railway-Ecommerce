@@ -63,7 +63,7 @@ const handlesubmit =  async(e)=>{
    }
 
  try {
-    const res = await axios.get(`http://localhost:8080/users`)
+    const res = await axios.get(`${API_URL}/users`)
     const users = res.data;
     const ExitUser = users.find((user)=>(
        user.email === formdata.email
@@ -77,7 +77,7 @@ const handlesubmit =  async(e)=>{
       return 
   } 
 
-  axios.post(`http://localhost:8080/users`,formdata)
+  axios.post(`${API_URL}/users`,formdata)
 
   toast.success("Registraion Successfully",{
    position: "top-right",

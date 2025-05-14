@@ -53,7 +53,7 @@ function Allproducts() {
       const getProduct = async()=>{
        try {
         setError(null)
-       const res = await axios.get(`http://localhost:8080/products`)
+       const res = await axios.get(`${API_URL}/products`)
       
        await new Promise(resolve => setTimeout(resolve,300))
        setProduct(res.data)
@@ -280,7 +280,7 @@ style={{display: FinalFilterFunction.length === 0 ? 'flex' : "grid",justifyConte
             onClick={()=> {window.scroll(0,0)}}>
                  <div className='min-h-[300px] bg-white shadow-xl rounded-md'>
                   <div className='h-[180px] flex justify-center items-center overflow-hidden'>
-                      <img src={`http://localhost:8080${product.image}`} alt={product.name} className='h-full w-full object-contain scale-100 hover:scale-110' />   
+                      <img src={`${API_URL}${product.image}`} alt={product.name} className='h-full w-full object-contain scale-100 hover:scale-110' />   
                   </div>
                   <div className='h-[170px] mt-2 px-2'>
                        <h2 className='text-2xl font-semibold'>{product.name}</h2> 

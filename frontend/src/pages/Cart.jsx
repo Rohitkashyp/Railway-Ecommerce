@@ -59,7 +59,7 @@ cart.length === 0 ? (
                                 }}><AiOutlineDelete size={25}/></button>
                           </div>
                            <div className='w-1/4 h-full flex justify-center items-center'>
-                            <img src={`http://localhost:8080${item.image}`} alt="img" className='h-20 md:h-25 w-[90%] object-contain' />
+                            <img src={`${API_URL}${item.image}`} alt="img" className='h-20 md:h-25 w-[90%] object-contain' />
                            </div>
                            <div className='w-1/4 h-full flex justify-center items-center'>
                             <h3 className='text-[16px] sm:text-[20px] font-normal'>{item.name}</h3>

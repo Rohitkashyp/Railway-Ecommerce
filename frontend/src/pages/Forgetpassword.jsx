@@ -26,7 +26,7 @@ function ForgetPassword() {
     const handlforget = async(e)=>{
        e.preventDefault()
        try {
-        const res = await axios.get(`http://localhost:8080/users`)
+        const res = await axios.get(`${API_URL}/users`)
       
         const users = res.data.find((user)=>(
           user.email === email
@@ -39,11 +39,11 @@ function ForgetPassword() {
            })
         return;
        }
-       const updatedpassword = await axios.patch(`http://localhost:8080/users/${users.id}`,{
+       const updatedpassword = await axios.patch(`${API_URL}/users/${users.id}`,{
         ...users,
         password:newpassword
     })
-       console.log(updatedpassword)
+      //  console.log(updatedpassword)
     
             localStorage.setItem("user",JSON.stringify(updatedpassword.data))
                setUser(updatedpassword.data)

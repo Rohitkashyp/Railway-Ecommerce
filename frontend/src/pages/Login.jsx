@@ -26,7 +26,7 @@ function Login() {
  const handlesubmitlogin =  async(e)=>{
     e.preventDefault()
   try {
-    const res = await axios.get(`http://localhost:8080/users`)
+    const res = await axios.get(`${API_URL}/users`)
     const users = res.data.find((user)=>(
         user.email === formdata.email && user.password === formdata.password
     ))
