@@ -40,7 +40,6 @@ function Footer() {
    </div>
 </div>
 </div>
-<hr className='mt-4 text-gray-600'/>
 
   <div className='bg-[#131a22] text-white flex flex-col items-center w-full mt-6 h-40'>
        <div className='flex flex-col items-center justify-center mt-12 gap-1'>
