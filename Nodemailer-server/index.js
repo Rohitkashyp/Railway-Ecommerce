@@ -10,7 +10,7 @@ dotenv.config();
 const app = express()
 // app.use(cors())
 
-const allowedOrigins = ['http://localhost:5173', 'https://e-com-best-deals.vercel.app'];
+const allowedOrigins = ['http://localhost:5173', 'https://thebestdealstore.com'];
 app.use(cors({
   origin: allowedOrigins,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -53,22 +53,6 @@ const transporter = nodemailer.createTransport({
    
 })
 
-// const orderlist = cartItems.map(item =>{
-
-//     return`
-//       <li style="margin-bottom 15px; padding: 10px; background-color: #f9f9f9; border-radius: 8px; list-style: none;">
-//       <strong>${item.name}</strong> - 
-//          <span style="margin-left: 8px; font-weight: bold;">₹Price</span> 
-//          <span style="color: red; font-size: 16px; margin-left: 4px;">${item.price}</span>
-//       <br/>
-//       <img src="${process.env.IMAGE_URL}${item.image}" alt="${item.name}"
-//       style="width: 60px; height: 60px; border-radius: 6px; margin-top: 6px;" />
-//     </li>
-//   `;
-    
-// }).join("")
-
-
 const orderlist = cartItems.map(item =>{
 
     return`
@@ -77,12 +61,15 @@ const orderlist = cartItems.map(item =>{
          <span style="margin-left: 8px; font-weight: bold;">₹Price</span> 
          <span style="color: red; font-size: 16px; margin-left: 4px;">${item.price}</span>
       <br/>
-      <img src="http://localhost:8080${item.image} alt="${item.name}"
+      <img src="${process.env.IMAGE_URL}${item.image}" alt="${item.name}"
       style="width: 60px; height: 60px; border-radius: 6px; margin-top: 6px;" />
     </li>
   `;
     
 }).join("")
+
+
+
 
 // user email send user with html content 
 const userMailOptions = {
